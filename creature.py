@@ -85,7 +85,7 @@ class brain:
         jsonWeights = json.dumps(self.weights)
 
         string = "INSERT INTO creatures (structure, weights, generation) \
-VALUES ('" + jsonStructure + "' , '" + jsonWeights + "' ," + str(self.generation) + ");"
+VALUES ('" + jsonStructure + "' , '" + jsonWeights + "' ," + str(self.generation) + "RETURNING id);"
         #print(string)
 
         self.ident = sendToDB(string)
@@ -237,12 +237,12 @@ def sendToDB(message):
     conn_string = "postgres://lxlameafsxcwnd:d0f2f7f2a3b0110169d6237dd40097000cdadcef849ef2a719246a46658e6658@ec2-54-217-205-90.eu-west-1.compute.amazonaws.com:5432/d5iu3re523ghb0"
     connection = psycopg2.connect(conn_string)
     cursor = connection.cursor()
-    cursor.execute(message)
+    id = cursor.execute(message)
     connection.commit()
 
     #find id / primary key
     #id = cursor.lastrowid
-    id = cursor.fetchone()[0]
+    #id = cursor.fetchone()[0]
     print("ID = " + str(id)) # im wary that ids could get confused if there are many conections at the same time using the same DB
 
     # close the connection
