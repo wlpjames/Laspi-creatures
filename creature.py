@@ -1,9 +1,9 @@
 import sys
 import random
 import copy
-import sqlite3
 import datetime
 import json
+import psycopg2
 from flask import jsonify
 
 
@@ -219,9 +219,8 @@ def fetchFromDB(message):
     #takes a string from the database and returns what the database gives.
 
     # cursor
-    conString = "postgres://lxlameafsxcwnd:d0f2f7f2a3b0110169d6237dd40097000cdadcef849ef2a719246a46658e6658@ec2-54-217-205-90.eu-west-1.compute.amazonaws.com:5432/d5iu3re523ghb0
-    connection = sqlite3.connect(conString)
-    cursor = connection.cursor()
+    conn_string = "pool.db"
+    connection = psycopg2.connect(conn_string)
     cursor.execute(message)
     #print("this is the rowcount")
     #print(cursor.rowcount)
@@ -234,8 +233,8 @@ def fetchFromDB(message):
 
 def sendToDB(message):
     # cursor
-    conString = "postgres://lxlameafsxcwnd:d0f2f7f2a3b0110169d6237dd40097000cdadcef849ef2a719246a46658e6658@ec2-54-217-205-90.eu-west-1.compute.amazonaws.com:5432/d5iu3re523ghb0
-    connection = sqlite3.connect(conString)
+    conn_string = "pool.db"
+    connection = psycopg2.connect(conn_string)
     cursor = connection.cursor()
     cursor.execute(message)
     connection.commit()
@@ -248,4 +247,6 @@ def sendToDB(message):
     connection.close()
 
     return id
+
+
 
