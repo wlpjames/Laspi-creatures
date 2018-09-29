@@ -85,7 +85,7 @@ class brain:
         jsonWeights = json.dumps(self.weights)
 
         string = "INSERT INTO creatures (structure, weights, generation) \
-VALUES ('" + jsonStructure + "' , '" + jsonWeights + "' ," + str(self.generation) + "RETURNING id);"
+VALUES ('" + jsonStructure + "' , '" + jsonWeights + "' ," + str(self.generation) + ") RETURNING id;"
         #print(string)
 
         self.ident = sendToDB(string)
