@@ -241,7 +241,8 @@ def sendToDB(message):
     connection.commit()
 
     #find id / primary key
-    id = cursor.lastrowid
+    #id = cursor.lastrowid
+    id = cursor.fetchone()[0]
     print("ID = " + str(id)) # im wary that ids could get confused if there are many conections at the same time using the same DB
 
     # close the connection
