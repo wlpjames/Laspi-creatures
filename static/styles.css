@@ -1,0 +1,93 @@
+
+
+html, body {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.headerMain {
+   margin-top:25px;
+   margin-bottom:20px;
+}
+
+.hideText {
+display: none;
+margin-bottom:60px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+canvas {
+  background-color: #ffffff;
+  align-self: center;
+}
+
+.tagLine {
+  margin-top: 15px;
+  position: absolute;
+  bottom: 0;
+}
+
+.center {
+  align-self: center;
+}
+
+.text {
+  margin-top : 40;
+}
+
+.right {
+    float: right;
+}
+
+.flow-right {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.container-total {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-height: 650px;
+}
+
+
+.title, .controls {
+  flex: none;
+}
+
+.button {
+  padding: 1px 45px;
+  float: right;
+}
+
+
+
+
+.forms {
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+
+.textButton {
+  margin: 0 auto;
+
+}
+
+
+.adder {
+  padding: 20px;
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+}
+
