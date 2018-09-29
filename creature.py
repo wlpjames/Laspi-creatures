@@ -242,7 +242,7 @@ def sendToDB(message):
 
     #find id / primary key
     id = cursor.lastrowid
-    #print("ID = " + str(id)) # im wary that ids could get confused if there are many conections at the same time using the same DB
+    print("ID = " + str(id)) # im wary that ids could get confused if there are many conections at the same time using the same DB
 
     # close the connection
     connection.close()
