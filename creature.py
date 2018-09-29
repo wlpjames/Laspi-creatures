@@ -221,6 +221,7 @@ def fetchFromDB(message):
     # cursor
     conn_string = "postgres://lxlameafsxcwnd:d0f2f7f2a3b0110169d6237dd40097000cdadcef849ef2a719246a46658e6658@ec2-54-217-205-90.eu-west-1.compute.amazonaws.com:5432/d5iu3re523ghb0"
     connection = psycopg2.connect(conn_string)
+    cursor = connection.cursor()
     cursor.execute(message)
     #print("this is the rowcount")
     #print(cursor.rowcount)
