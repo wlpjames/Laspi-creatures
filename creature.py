@@ -70,10 +70,11 @@ class brain:
 
 
         #parse database
-        self.ident = data[0][0]
-        self.structure = json.loads(data[0][2])
-        self.weights = json.loads(data[0][3])
-        self.generation = data[0][7]
+        self.structure = json.loads(data[0][0])
+        self.weights = json.loads(data[0][1])
+        self.generation = data[0][2]
+        self.ident = data[0][3]
+      
         self.findMass()
 
         return
