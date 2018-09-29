@@ -249,7 +249,7 @@ def sendToDB(message):
     # close the connection
     connection.close()
 
-    return id
+    return rows[0][0]
 
 
 
