@@ -219,7 +219,7 @@ def fetchFromDB(message):
     #takes a string from the database and returns what the database gives.
 
     # cursor
-    connection = sqlite3.connect("pool.db")
+    connection = sqlite3.connect("postgres://lxlameafsxcwnd:d0f2f7f2a3b0110169d6237dd40097000cdadcef849ef2a719246a46658e6658@ec2-54-217-205-90.eu-west-1.compute.amazonaws.com:5432/d5iu3re523ghb0")
     cursor = connection.cursor()
     cursor.execute(message)
     #print("this is the rowcount")
@@ -233,7 +233,7 @@ def fetchFromDB(message):
 
 def sendToDB(message):
     # cursor
-    connection = sqlite3.connect("pool.db")
+    connection = sqlite3.connect("postgres://lxlameafsxcwnd:d0f2f7f2a3b0110169d6237dd40097000cdadcef849ef2a719246a46658e6658@ec2-54-217-205-90.eu-west-1.compute.amazonaws.com:5432/d5iu3re523ghb0")
     cursor = connection.cursor()
     cursor.execute(message)
     connection.commit()
