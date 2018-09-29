@@ -2,11 +2,11 @@
 function startGame() {
 
 
-    pack = 30;
+    pack = 20;
     MutationsID = 0;
     testCreature = [];
     wallMass = 25;
-    biasSize = 20;
+    biasSize = 10;
     //size = Math.min(window.innerHeight, window.innerWidth) / 1.2;
     maxWidth = 1200;
     maxCreatures = 50;
